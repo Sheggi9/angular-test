@@ -1,0 +1,9 @@
+<h3>Posts list</h3>
+<ul>
+  <li *ngFor="let post of posts">
+    <a routerLinkActive="active" routerLink="/posts/{{ post.id }}">
+      {{ post.title }}
+    </a>
+  </li>
+</ul>
+<router-outlet></router-outlet>
