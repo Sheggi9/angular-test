@@ -1,0 +1,19 @@
+<h2>HEROES</h2>
+<div *ngIf="crisis">
+  <h3>"{{ editName }}"</h3>
+  <div>
+    <label>Id: </label>{{ crisis.id }}</div>
+  <div>
+    <label>Name: </label>
+    <input [(ngModel)]="crisis.name" placeholder="name"/>
+  </div>
+  <p>
+    <button (click)="gotoBack()">Back</button>
+  </p>
+  <p>
+    <button (click)="save()">Save</button>
+  </p>
+  <p>
+    <button (click)="alertState()">Console form state</button>
+  </p>
+</div>

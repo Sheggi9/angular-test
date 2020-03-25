@@ -1,8 +1,16 @@
 <h1>Angular Router</h1>
+<div>{{count$ | async | json}}</div>
+<button (click)="incHome()">set value</button>
 <!--<a routerLink="posts" routerLinkActive="active">posts</a>-->
 <nav>
   <a routerLink="/posts" routerLinkActive="active">Posts</a>
   <a routerLink="/crisis-center" routerLinkActive="active">Crisis Center</a>
-  <a routerLink="/heroes" routerLinkActive="active">Heroes</a>
+  <a routerLink="/superheroes" routerLinkActive="active">Heroes</a>
+  <a routerLink="/admin" routerLinkActive="active">Admin</a>
+  <a routerLink="/login" routerLinkActive="active">Login</a>
+  <a [routerLink]="[{ outlets: { popup: ['compose'] } }]">Contact</a>
 </nav>
-<router-outlet></router-outlet>
+<div [@routeAnimation]="getAnimationData(routerOutlet)">
+  <router-outlet #routerOutlet="outlet"></router-outlet>
+</div>
+<router-outlet name="popup"></router-outlet>
